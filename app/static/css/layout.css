@@ -1,0 +1,12 @@
+
+.clearfix{ overflow:hidden; zoom:1; }
+.bold{ font-weight:800; }
+.f_right{ float:right; }
+.f_left{ float:left; }
+.t_right{ text-align:right; }
+.t_left{ text-align:left; }
+.t_center{ text-align:center; }
+.t_just{ text-justify:inter-ideograph; text-align:justify; }
+#ai-logo { height: 100px; width: auto; transition: transform 0.5s ease-in-out; }
+
+ 

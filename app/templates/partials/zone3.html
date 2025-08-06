@@ -1,0 +1,19 @@
+<!-- templates/partials/zone3.html -->
+<div>
+    <ul>
+        <li><a href="#" class="option-link" data-option="AI">AI</a></li>
+        <li><a href="#" class="option-link" data-option="ML">ML</a></li>
+        <li><a href="#" class="option-link" data-option="NLP">NLP</a></li>
+        <li><a href="#" class="option-link" data-option="QM">QM</a></li>
+    </ul>
+</div>
+
+<script>
+$(document).on('click', '.option-link', function (e) {
+    e.preventDefault();
+    const option = $(this).data('option');
+    $.get(`/option/${option}`, function (data) {
+        $('#zone4-content').html(data);
+    });
+});
+</script>

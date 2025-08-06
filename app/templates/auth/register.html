@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div id="zone4-content">
+  <h2>Sign Up</h2>
+  <form action="{{ url_for('auth.register') }}" method="POST">
+    <input type="text" name="username" placeholder="Username" required /><br />
+    <input type="email" name="email" placeholder="Email" required /><br />
+    <input type="password" name="password" placeholder="Password" required /><br />
+    <input type="password" name="confirm_password" placeholder="Confirm Password" required /><br />
+    <button type="submit">Register</button>
+  </form>
+</div>
+{% endblock %}
+
+
+ 

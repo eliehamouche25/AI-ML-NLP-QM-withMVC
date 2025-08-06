@@ -1,0 +1,166 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-rows: auto auto 1fr; /* zone-1, zone-2, and the content zones */
+  grid-template-columns: 1fr 3fr;
+  grid-template-areas:
+    "zone-1 zone-1"
+    "zone-2 zone-2"
+    "zone-3 zone-4";
+  height: 100vh;
+  margin: 0;
+}
+
+ 
+.nav { background: #f0f0f0;
+   padding: 10px;
+   }
+
+.area3 { height: 300px; 
+  overflow-y: scroll; 
+  background: #fafafa; 
+  padding: 20px; }
+
+/* Shared Zone Styles */
+.zone {
+  padding: 10px;
+}
+
+/* Zone 1: Header */
+.zone-1 {
+  grid-area: zone-1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  background-color: white;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  background-color: #000;
+  border-radius: 50%;
+  animation: rotate 4s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  left: 20px;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ✅ Zone 2: Navigation Bar – Sky Blue */
+.zone-2 {
+  grid-area: zone-2;
+  background-color: #e3ebf1;
+  display: flex;
+  justify-content: space-between;
+  align-items: left;
+  height: 70px;
+  border-bottom: 1px solid #ccc;
+  padding: 0 5px;
+}
+
+.menu-left {
+  display: flex;
+  gap: 15px;
+}
+
+.menu-left a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.menu-left a:hover {
+  color: #007bff;
+}
+
+.menu-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box {
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.btn {
+  padding: 5px 12px;
+  cursor: pointer;
+  border: none;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+}
+
+.btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* ✅ Zone 3: Sidebar – Soft Gray-Blue */
+.zone-3 {
+  grid-area: zone-3;
+  background-color: #f1f4f9;
+  border-right: 1px solid #ccc;
+  padding-top: 0;  /* Remove the 60px padding */
+  height: 100%;    /* Take full height of grid row */
+  overflow-y: auto; /* Scroll if content overflows */
+}
+
+.zone-3 ul {
+  list-style: none;
+  padding-left: 15px;
+}
+
+.zone-3 li {
+  margin-bottom: 10px;
+}
+
+.zone-3 a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.zone-3 a:hover {
+  color: #007bff;
+}
+
+.spacer {
+  height: 40px;
+}
+
+/* Zone 4: Main Display Area */
+.zone-4 {
+  grid-area: zone-4;
+  background-color: rgb(198, 208, 211);
+  padding: 20px;
+  height:100px
+  height: 100%;   /* Match zone-3 height */
+}
+
+

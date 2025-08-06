@@ -1,0 +1,21 @@
+/* Zone 4 Styling */
+#zone4 {
+  background-color: navy;
+  color: white;
+  padding: 30px 20px;
+  text-align: center;
+  font-family: 'Times New Roman', serif;
+  font-size: 16px;
+  font-style: italic;
+}
+
+/* Logo Image Styling */
+#zone4 .logo {
+  max-width: 120px;
+  margin-bottom: 15px;
+}
+
+/* Text Lines */
+.zone4-text p {
+  margin: 6px 0;
+}

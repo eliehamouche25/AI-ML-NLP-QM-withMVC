@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <!--<title>{% block title %}My Project{% endblock %}</title> -->
+   
+    <!-- CSS -->
+    <link href="{{ url_for('static', filename='css/reset.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/layout.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/pulldown.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+ <body>
+<header class="header-container">
+
+    <!-- Logo at the top left (rotating) -->
+   <img id="ai-logo" src="{{ url_for('static', filename='img/logoAI.png') }}" alt="AI/EH Logo" class="rotate-logo" width="10" height="10" / > 
+     <!-- Authenticate section on the right -->
+  </div>
+
+     <div id="auth-section">
+        <!-- project header-->
+        {% include 'main/authenticate.html' %}
+    </div>
+
+<div class="project-header" style="margin-top: 50px; clear: both;">
+       <h1 style="text-align: left;">AI-ML-NLP-QM Project  </h1>
+    <div class="search-container">
+         
+         Search  : <input id="search-box" type="text" size="80" height="20"  placeholder="Search...">
+    </div
+
+    </header> 
+
+
+ </hr>   </hr>   </hr>  < 
+    <!-- Navigation Menu -->
+     <div id="zone2"> 
+    <nav>
+        <ul>
+            <li><a href="#">Home</a>
+                <ul>
+                    <li><a href="#">AI</a></li>
+                    <li><a href="#">ML</a></li>
+                    <li><a href="#">NLP</a></li>
+                    <li><a href="#">QM</a></li>
+                    <li><a href="#">Others</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Reports</a>
+                <ul>
+                    <li><a href="#">Report 01</a></li>
+                    <li><a href="#">Report 02</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Insights</a>
+                <ul>
+                    <li><a href="#">Insight 01</a></li>
+                    <li><a href="#">Insight 02</a></li>
+                    <li><a href="#">Insight 03</a></li>
+                    <li><a href="#">Insight 04</a></li>
+                </ul>
+            </li>
+           
+ <            <li><a href="#">Security </a>
+                <ul>
+                    <li><a href="#">Security-01</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Actions</a>
+                <ul>
+                    <li><a href="#">Action-01</a></li>
+                    <li><a href="#">Action-02</a></li>
+                    <li><a href="#">Action-03</a></li>
+
+                </ul>
+            </li>
+
+             <li><a href="#">Upload/download </a>
+                <ul>
+                    <li><a href="#">UploadFile-01</a></li>
+                    <li><a href="#">DowloadFile-01</a></li>
+                </ul>
+            </li>
+
+            <li><a href="#"> About Us </a>
+                <ul>
+                    <li><a href="#">About us-01</a></li>
+                </ul>
+            </li>
+
+        </ul>
+    </nav>
+</div>
+
+ 
+ 
+<div class="zone-container">
+    <div id="zone3">
+        <!-- Quick links -->
+        <ul class="quick-links">
+        <h2>   <li><a href="#"><img src="/static/img/ai.png" alt="AI" /> AI</a></li>
+            <li><a href="#"><img src="/static/img/ml.png" alt="ML" /> ML</a></li>
+            <li><a href="#"><img src="/static/img/nlp.png" alt="NLP" /> NLP</a></li>
+            <li><a href="#"><img src="/static/img/qm.png" alt="QM" /> QM</a></li> </h2> 
+        </ul>
+    </div>
+
+    <div id="elevator"></div> <!-- Elevator -->
+    
+    <div id="zone4">
+        <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Project Logo" class="footer-logo" />
+        <p class="footer-text">
+         <h2>  This project integrates Artificial Intelligence, Machine Learning,<br>
+            Natural Language Processing, and Quantum Mechanics into a unified platform.<br>
+            It enables advanced intelligent systems development.<br>
+            Our goal is to foster innovation and collaboration.<br>
+            Join us in shaping the future of technology. </h2> 
+        </p>
+    </div>
+</div>
+    </footer>
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/common.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/pulldown.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $('nav').pulldown();
+        });
+    </script>
+
+</body>
+</html>

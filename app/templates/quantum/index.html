@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h2>Quantum Experiments</h2>
+<a href="{{ url_for('quantum.add_experiment') }}">Add New Experiment</a>
+<ul>
+  {% for exp in experiments %}
+    <li><strong>{{ exp.name }}</strong>: {{ exp.description }}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

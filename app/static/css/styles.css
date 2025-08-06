@@ -1,0 +1,154 @@
+/* Ensure full height for flex layout */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+ 
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+ 
+/* Clear floats inside header */
+header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Project header moved up and centered */
+.project-header {
+    margin-top: -20px; /* moved up by approx. 2 lines */
+    text-align: left;
+    clear: both;
+}
+
+
+/* Search container aligned left inside project header */
+.search-container {
+    text-align: left;
+    margin: 10px auto 0 auto;
+    max-width: 1200px;
+    height : 20px ;
+    display: flex;
+}
+
+/* Navigation menu below header */
+nav {
+    margin-top: 15px;
+    clear: both;
+}
+
+/* Footer sticks to bottom with padding */
+footer.menu-footer {
+    margin-top: auto;
+    padding:10px;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+/* Footer logo size and spacing */
+.footer-logo {
+    max-width: 50px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* Footer text styling */
+.footer-text {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+#ai-logo{
+
+    float: left;
+    margin: 10px 10px 10px 10px;
+    width: 50px; /* smaller size */
+    height: 80;
+    animation: rotate 8s linear infinite;
+}
+
+#zone2 {
+  background-color: #ccc;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+ 
+
+/* Zone 3: same color as authenticate, under it */
+#zone3 {
+     width: 190px; /* fixed */
+    background-color: gray;
+    padding: 10px;
+    height: auto; /* allow dynamic height */
+    box-sizing: border-box;
+     height: 500px;
+    align-items: center;
+}
+
+
+/* Zone 4: footer aligned horizontally with authenticate if required */
+#zone4 {
+    flex: 1; /* take remaining width */
+    background-color:rgb(199, 195, 202);
+    padding: 10px;
+    min-height: 150px;
+    box-sizing: border-box;
+     height: 500px;
+}
+
+/* Wrapper to hold Zone 3 and Zone 4 side by side */
+
+.zone-container {
+    display: flex;
+    align-items: flex-start; /* Align to top */
+    gap: 10px;
+    margin-top: 20px;
+}
+
+
+/* Elevator (scroll bar) to the right of zone 3 */
+ 
+#elevator {
+    width: 20px;
+    height: auto;
+    background-color: dark ;
+    border: 1px solid #666;
+}
+
+ntainer uses flex to align items in one line */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* space between logo and auth */
+    align-items: center; /* vertically center them */
+    padding: 10px 10px;
+}
+
+
+/* Auth section stays to the right */
+#auth-section {
+    width: 300px; /* same as before */
+    background-color: gray;
+    font-size: 15px;
+    color: white;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+}

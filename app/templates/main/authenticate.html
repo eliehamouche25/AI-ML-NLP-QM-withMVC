@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login </title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+
+            <form action="auth_admin.py" method="POST">    
+                <fieldset>
+                Email    : <input type="text" name="UserId" placeholder="UserId" required ><br>
+                Password : <input type="password" name="pwd" placeholder="pwd" required><br>
+                Profile  :  
+                <select name="profile_id">
+                    <option value="1">1-Admin</option>
+                    <option value="2">2-User</option>
+                </select>
+                <input id="login" type="submit" name="login" value="LOGIN">
+            </fieldset>
+            </form>
+ 
+</body>
+</html>
+
+  

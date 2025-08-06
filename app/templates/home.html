@@ -1,0 +1,113 @@
+
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI-ML-NLP-QM Portal</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style_auth.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style3.css') }}">
+    <style>
+        .zone2 {
+            padding: 20px;
+            border: 1px solid #ccc;
+            margin: 15px auto;
+            width: 80%;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the AI-ML-NLP-QM Integration Portal</h1>
+
+    <!-- ZONE 2 -->
+    <div id="zone2" class="zone2">
+        <!-- Le contenu dynamique viendra ici -->
+        <p>Please sign in to access tools.</p>
+    </div>
+
+    <!-- Signin Form -->
+    <div id="login-form">
+        <input type="text" id="username" placeholder="Username"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <button id="signin-btn">Sign In</button>
+    </div>
+
+<!-- Sign Up Form -->
+<div id="signup-form">
+    <input type="text" id="new-username" placeholder="New Username"><br>
+    <input type="password" id="new-password" placeholder="New Password"><br>
+
+    <label for="role">Select Role:</label>
+    <select id="role">
+        <option value="guest">Guest</option>
+        <option value="admin">Admin</option>
+    </select><br>
+
+    <button id="signup-btn">Sign Up</button>
+</div>
+
+<main>
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <h2>Sign In</h2>
+  <div id="signin-form">
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button id="signin-btn">Sign In</button>
+  </div>
+  <div id="response"></div>
+{% endblock %}
+</main>
+
+
+<div id="tools-section" style="display:none;">
+    <h3>Welcome, <span id="user-role"></span>!</h3>
+    <div id="tools-list"></div>
+</div>
+
+  
+<script>
+  $('#signin-btn').click(function () {
+    const username = $('#new-username /').val();
+    const password = $('##new-password').val();
+
+    $.ajax({
+      url: '/signin',
+      method: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({ username, password }),
+      success: function (response) {
+        if (response.status === 'ok') {
+          $('#response').html(`<p>✅ Welcome, ${response.username}!</p>`);
+          $('#tools-section').show();
+          $('#user-role').text(response.role);
+
+          let tools = '';
+          if (response.role === 'admin') {
+            tools += `<p>🔧 Admin Panel</p>`;
+          }
+          if (['admin', 'guest'].includes(response.role)) {
+            tools += `<p>🧠 Access to AI/NLP/QM Modules</p>`;
+          }
+          $('#tools-list').html(tools);
+        } else {
+          $('#response').html(`<p>❌ ${response.message}</p>`);
+        }
+      },
+      error: function () {
+        $('#response').html('<p>❌ Error connecting to the server.</p>');
+      }
+    });
+  });
+</script>
+</body>
+</html>
+
+
+
+
+ 
